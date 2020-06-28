@@ -1,0 +1,88 @@
+nav {
+  border-bottom: 1px solid #e1e1e1;
+  width: 100%;
+  box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.05);
+  height: 75px;
+  box-sizing: border-box;
+  transition: height 0.1s ease;
+  background: white;
+  line-height: 75px;
+}
+nav ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  float: left;
+}
+nav ul li {
+  display: list-item;
+}
+nav ul li a {
+  user-select: none;
+  margin-right: 30px;
+  font-size: 14px;
+  line-height: 74px;
+  transition: color 0.1s ease;
+  color: rgba(0, 0, 0, 0.7);
+}
+nav ul li .active {
+  font-weight: 700;
+  color: #333;
+}
+nav .search {
+  height: 34px;
+  width: 328px;
+  border-radius: 18px;
+  border: 1px solid #e1e1e1;
+  float: right;
+  margin-top: 19px;
+  display: flex;
+}
+nav .search button {
+  margin: auto 10px;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: none;
+  background-size: contain;
+  cursor: pointer;
+}
+nav .search input {
+  flex: 1;
+  height: 100%;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  padding: 0;
+  margin-right: 20px;
+  color: rgba(0, 0, 0, 0.7);
+  font-weight: 700;
+}
+nav .search input .recommends {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 34px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+nav .search input .recommends a {
+  box-sizing: border-box;
+  padding: 0 10px;
+  font-size: 12px;
+  line-height: 20px;
+  height: 20px;
+  border-radius: 10px;
+  display: inline-block;
+  margin-right: 8px;
+  color: #8aad37;
+  border: 1px solid rgba(138, 173, 55, 0.6);
+  background: #f7fae1;
+  font-weight: 700;
+}
+nav .search input .recommends a:first-child {
+  color: #3965cc;
+  border: 1px solid #93b2f7;
+  background: #e5efff;
+}
