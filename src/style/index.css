@@ -37,6 +37,7 @@ nav .search {
   float: right;
   margin-top: 19px;
   display: flex;
+  position: relative;
 }
 nav .search button {
   margin: auto 10px;
@@ -58,16 +59,17 @@ nav .search input {
   color: rgba(0, 0, 0, 0.7);
   font-weight: 700;
 }
-nav .search input .recommends {
+nav .search .recommends {
   position: absolute;
   right: 0;
   top: 0;
   height: 34px;
   display: flex;
+  width: 156px;
   justify-content: flex-start;
   align-items: center;
 }
-nav .search input .recommends a {
+nav .search .recommends .recommend {
   box-sizing: border-box;
   padding: 0 10px;
   font-size: 12px;
@@ -81,8 +83,322 @@ nav .search input .recommends a {
   background: #f7fae1;
   font-weight: 700;
 }
-nav .search input .recommends a:first-child {
+nav .search .recommends .recommend:first-child {
   color: #3965cc;
   border: 1px solid #93b2f7;
   background: #e5efff;
+}
+.container {
+  padding: 25px 0;
+  box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+.container .banner {
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  overflow: hidden;
+  list-style: none;
+  padding: 0;
+  z-index: 1;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
+}
+.container .banner .banner_warp {
+  width: 100%;
+  height: 499px;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
+}
+.container .banner img {
+  width: 100%;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  border-radius: 8px;
+}
+.container .item {
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  margin-top: 25px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 8px;
+  box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  height: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+.container .item .item_flex {
+  flex: 1;
+  box-sizing: border-box;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  border-right: 1px solid #efefef;
+}
+.container .item .item_flex img {
+  width: 304px;
+  height: 198px;
+  cursor: pointer;
+}
+.container .shop {
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  margin-top: 25px;
+  box-sizing: border-box;
+  border: 1px solid rgba(0, 0, 0, 0.14);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
+}
+.container .shop .shop_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  background: #fafafa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.container .shop .shop_header a {
+  display: inline-block;
+  margin: 0 15px;
+  font-size: 14px;
+  color: #666;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+  transition: all 0.15s ease-out;
+}
+.container .shop .shop_header .more:before {
+  display: inline-block;
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  width: 3px;
+  height: 3px;
+  background: #bebebe;
+  content: "";
+}
+.container .shop .shop_header .active {
+  font-weight: 700;
+}
+.container .shop .shop_header h5 {
+  margin-left: 25px;
+  font-weight: bolder;
+  font-size: 18px;
+  line-height: 60px;
+  color: #666;
+}
+.container .shop .shop_header aside {
+  position: absolute;
+  right: 10px;
+  top: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .shop .shop_header aside button {
+  width: 48px;
+  height: 48px;
+  background: url('../img/jiantou.png') no-repeat center;
+  background-size: 48px;
+  display: inline-block;
+  border: none;
+  text-transform: none;
+  overflow: visible;
+  color: inherit;
+  margin: 0;
+  cursor: pointer;
+  text-rendering: auto;
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-indent: 0px;
+  text-shadow: none;
+  text-align: center;
+  align-items: flex-start;
+  box-sizing: border-box;
+  font: 400 13.3333px Arial;
+}
+.container .shop .shop_header aside .rotate {
+  transform: rotate(180deg);
+  opacity: 0.3;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+.container .shop aside {
+  display: flex;
+  justify-content: flex-start;
+}
+.container .shop aside .advertise {
+  box-sizing: border-box;
+  flex: 0 0 50%;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  border-right: 1px solid #efefef;
+}
+.container .shop aside .advertise img {
+  border: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container .shop aside .advertise .ad {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  color: #5079d9;
+  cursor: pointer;
+  background: transparent;
+  margin: 0;
+  padding: 0;
+  transition: all 0.15s ease-out;
+}
+.container .shop aside .advertise .ad:hover {
+  text-decoration: none;
+}
+.container .shop aside section {
+  position: relative;
+  width: 305px;
+  height: 429px;
+  border: none;
+  border-right: 1px solid #efefef;
+  border-bottom: 1px solid #efefef;
+  border-radius: initial;
+  background: #fff;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+  display: block;
+}
+.container .shop aside section figure {
+  display: block;
+  margin: 0 auto;
+  padding: 45px 0 20px;
+  box-sizing: border-box;
+}
+.container .shop aside section figure img {
+  display: block;
+  width: 216px;
+  height: 216px;
+  margin: 0 auto;
+}
+.container .shop aside section article {
+  display: block;
+}
+.container .shop aside section article h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin: 0 8px;
+  color: #333;
+}
+.container .shop aside section article h5 {
+  padding: 15px 12px 0;
+  font-size: 12px;
+  color: #999;
+}
+.container .shop aside section aside {
+  margin-top: 15px;
+  height: 17px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .shop aside section aside figure {
+  display: inline-block;
+  overflow: hidden;
+  margin: 0 5px;
+  padding: 2px;
+  width: 14px;
+  height: 14px;
+  border: 1px solid #e5e5e5;
+  border-radius: 50%;
+  cursor: pointer;
+  text-align: center;
+}
+.container .shop aside section aside figure img {
+  border: 0;
+  display: block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+.container .shop aside section aside .active {
+  -webkit-box-shadow: inset 0 0 0 1px #b2b2b2;
+  box-shadow: inset 0 0 0 1px #b2b2b2;
+  border-color: #b2b2b2;
+}
+.container .shop aside section .item-price {
+  font-family: Arial;
+  font-size: 18px;
+  font-weight: bolder;
+  color: #d44d44;
+  margin: 20px 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+.container .shop aside section .item-price .origin-price {
+  text-decoration: line-through;
+  padding-left: 10px;
+  font-weight: 400;
+  color: #ccc;
+  font-size: 12px;
+}
+.container .shop aside section .activity-tag {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.container .shop aside section .activity-tag .red {
+  color: #d03b34;
+  background: #ffe7e5;
+  border-color: #f3938b;
+}
+.container .shop aside section .activity-tag span {
+  display: inline-block;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 700;
+  height: 20px;
+  line-height: 18px;
+  border: 1px solid #e6e6e6;
+  border-radius: 13px;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05);
+  text-align: center;
+  box-sizing: border-box;
+}
+.container .shop aside section .activity-tag .yellow {
+  color: #a06e37;
+  background: #fffbdf;
+  border-color: #d5b480;
+}
+.container .shop .common-flex-box {
+  flex-flow: row wrap;
+  display: flex;
+  justify-content: flex-start;
+}
+.container .shop .common-flex-box section {
+  box-sizing: border-box;
+  height: 429px;
+  width: 304.5px;
 }
