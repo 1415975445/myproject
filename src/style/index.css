@@ -149,6 +149,9 @@ nav .search .recommends .recommend:first-child {
   height: 198px;
   cursor: pointer;
 }
+.container .item .item_flex:hover {
+  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3) inset;
+}
 .container .shop {
   overflow: hidden;
   position: relative;
@@ -288,6 +291,7 @@ nav .search .recommends .recommend:first-child {
   cursor: pointer;
   overflow: hidden;
   display: block;
+  transition: all 0.2s;
 }
 .container .shop aside section figure {
   display: block;
@@ -392,6 +396,9 @@ nav .search .recommends .recommend:first-child {
   color: #a06e37;
   background: #fffbdf;
   border-color: #d5b480;
+}
+.container .shop aside section:hover {
+  box-shadow: 0px 0px 5px 8px rgba(0, 0, 0, 0.03) inset;
 }
 .container .shop .common-flex-box {
   flex-flow: row wrap;
