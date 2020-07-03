@@ -134,8 +134,22 @@ nav .search .recommends .recommend:first-child {
   height: 198px;
   cursor: pointer;
 }
-.container .item .item_flex:hover {
-  box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.3) inset;
+.container .item .item_flex a {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  text-decoration: none;
+  color: #5079d9;
+  cursor: pointer;
+  background-color: transparent;
+  height: 198px;
+  width: 304px;
+}
+.container .item .item_flex a:hover {
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.03) inset;
 }
 .container .shop {
   overflow: hidden;

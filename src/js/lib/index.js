@@ -1,4 +1,4 @@
-let baseUrl = "http://localhost/h5-203/myproject/smartisan.com/";
+let baseUrl = "http://localhost/h5-203/myproject/smartisan.com";
 define(['jquery'], function($) {
     return{
         render:function(){
@@ -10,23 +10,27 @@ define(['jquery'], function($) {
                     console.log(res);
                     let temp = '';
                     res.forEach(element => {
+                        let pic = JSON.parse(element.pro_pic);
+                        console.log(pic);
                         temp += `<section>
-                        <figure>
-                            <img src="${baseUrl}/src${element.pro_pic}" alt="">
-                            <article>
-                                <h3>${element.pro_title}</h3>
-                                <h5>${element.pro_des}</h5>
-                            </article>
-                            <aside>
-                            </aside>
-                            <article class="item-price">
-                                <span>￥${element.pro_price}</span>
-                                <span class="origin-price">￥${element.pro_reprice}</span>
-                            </article>
-                            <div class="activity-tag">
-                                <span class="yellow">${element.pro_act}</span>
-                            </div>
-                        </figure>
+                        <a href="${baseUrl}/src/html/product.html?id=${element.pro_id}">
+                            <figure>
+                                <img src="${baseUrl}/src${pic[0].src}" alt="">
+                                <article>
+                                    <h3>${element.pro_title}</h3>
+                                    <h5>${element.pro_des}</h5>
+                                </article>
+                                <aside>
+                                </aside>
+                                <article class="item-price">
+                                    <span>￥${element.pro_price}</span>
+                                    <span class="origin-price">￥${element.pro_reprice}</span>
+                                </article>
+                                <div class="activity-tag">
+                                    <span class="yellow">￥${element.pro_act}</span>
+                                </div>
+                            </figure>
+                        </a>
                     </section>` ;
                     });
                     $('.shop:first .remen').append(temp);
@@ -48,7 +52,7 @@ define(['jquery'], function($) {
                 ],
                 ie6Tidy: false, // IE6下精简效果
                 random: false, // 随机使用转场动画效果
-                duration: 4000, // 图片停留时长（毫秒）
+                duration: 1000, // 图片停留时长（毫秒）
                 speed: 900 // 转场效果时长（毫秒）
               };
               /* 创建轮播效果 */
