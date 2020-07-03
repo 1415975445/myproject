@@ -52,7 +52,7 @@ define(['jquery'], function($) {
                 ],
                 ie6Tidy: false, // IE6下精简效果
                 random: false, // 随机使用转场动画效果
-                duration: 1000, // 图片停留时长（毫秒）
+                duration: 3000, // 图片停留时长（毫秒）
                 speed: 900 // 转场效果时长（毫秒）
               };
               /* 创建轮播效果 */
