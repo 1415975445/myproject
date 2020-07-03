@@ -1,10 +1,13 @@
 require.config({
     paths: {
         jquery: './jquery.min',
-        index: './lib/index'
-    }
+        index: './lib/index',
+        slider:'./vmc.slider.full.min'
+    },
+    shim:{}
 });
 
-require(['index'], function(index) {
+require(['index','slider'], function(index,slider) {
     index.render();
+    index.slider();
 });

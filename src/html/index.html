@@ -8,9 +8,10 @@
     <link rel="stylesheet" href="../style/reset.css">
     <link rel="stylesheet" href="../style/index.css">
     <link rel="stylesheet" href="http://at.alicdn.com/t/font_1700348_tipkpf5a34g.css">
-    <link rel="stylesheet" href="../style/nivo-slider.css">
-    <script src="../js/require.js" data-main="../js/main.index.js"></script>
+    <link rel="stylesheet" href="../style/style.css">
+    <script src="../js/require.js" data-main="../js/main.index.js"></script>`
     <script src="../js/jquery.min.js"></script>
+    <script src="../js/vmc.slider.full.min.js"></script>
 </head>
 <body>
     <!-- 头部 -->
@@ -67,8 +68,15 @@
     <div class="container m_center">
         <!-- 轮播 -->
         <div class="banner">
-            <div class="banner_warp">
+            <!-- <div class="banner_warp">
                 <img src="../img/banner01.webp" alt="" >
+            </div> -->
+            <div id="slider">
+                <a href="#"><img src="../img/banner01.webp"/></a>
+                <a href="#"><img src="../img/banner02.webp"/></a>
+                <a href="#"><img src="../img/banner03.webp"/></a>
+                <a href="#"><img src="../img/banner04.webp"/></a>
+                <a href="#"><img src="../img/banner05.webp"/></a>
             </div>
         </div>
         <!-- 轮播产品 -->
@@ -1652,5 +1660,26 @@
     <div class="corner">
         <img src="../img/corner.webp" alt="">
     </div>
+    <!-- <script>
+        var options = {
+            width: 1218, // 宽度
+            height:497, // 高度
+            gridCol: 10, // 网格列数
+            gridRow: 5, // 网格行数
+            gridVertical: 20, // 栅格列数
+            gridHorizontal: 10, // 栅格行数
+            autoPlay: true, // 自动播放
+            ascending: true, // 图片按照升序播放
+            effects: [ // 使用的转场动画效果
+                'fade'
+            ],
+            ie6Tidy: false, // IE6下精简效果
+            random: false, // 随机使用转场动画效果
+            duration: 4000, // 图片停留时长（毫秒）
+            speed: 900 // 转场效果时长（毫秒）
+        };
+            /* 创建轮播效果 */
+        $('#slider').vmcSlider(options);
+    </script> -->
 </body>
 </html>

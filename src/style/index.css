@@ -92,8 +92,11 @@ nav .search .recommends .recommend:first-child {
   padding: 25px 0;
   box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  position: relative;
 }
 .container .banner {
+  height: 497px;
+  width: 1218px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -103,24 +106,6 @@ nav .search .recommends .recommend:first-child {
   z-index: 1;
   border-radius: 8px;
   box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
-}
-.container .banner .banner_warp {
-  width: 100%;
-  height: 499px;
-  border-radius: 8px;
-  overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.14);
-  box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
-}
-.container .banner img {
-  width: 100%;
-  position: relative;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  box-shadow: 0 3px 8px -6px rgba(0, 0, 0, 0.1);
-  cursor: pointer;
-  border-radius: 8px;
 }
 .container .item {
   overflow: hidden;
@@ -398,7 +383,7 @@ nav .search .recommends .recommend:first-child {
   border-color: #d5b480;
 }
 .container .shop aside section:hover {
-  box-shadow: 0px 0px 5px 8px rgba(0, 0, 0, 0.03) inset;
+  box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.03) inset;
 }
 .container .shop .common-flex-box {
   flex-flow: row wrap;
