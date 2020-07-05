@@ -11,21 +11,23 @@ define(['jquery'], function($) {
                 },
                 dataType: "json",
                 success: function (res) {
+                    let act = JSON.parse(res.pro_ac);
+                    console.log(res);
                     let pic = JSON.parse(res.pro_pic);
                     let temp = `
                     <div class="product-info">
                         <div class="product-title">
-                            <h1>坚果 Pro 3</h1>
-                            <h2>高通骁龙<sup>TM</sup> 855Plus · 4800 万模范四摄 · Smartisan OS 7.0</h2>
+                            <h1>${res.pro_title}</h1>
+                            <h2>${res.pro_des}</h2>
                             <div class="item-price">
                                 <span class="now-price">
                                     <em>￥</em>
-                                    <i>199.00</i>
+                                    <i>${res.pro_price}</i>
                                 </span>
                                 <span class="ori-price">
                                 原价：
                                     <i>￥</i>
-                                    <span>249.00</span>
+                                    <span>${res.pro_reprice}</span>
                                 </span>
                             </div>
                         </div>
@@ -35,21 +37,15 @@ define(['jquery'], function($) {
                                 <div class="activities-list">
                                     <article>
                                         <figure>
-                                            <div class="tag tag-yellow">直降</div>
+                                            <div class="tag tag-yellow">活动</div>
                                         </figure>
-                                        <label>坚果Pro 3 限时直降</label>
+                                        <label>${act[0].title}</label>
                                     </article>
                                     <article>
                                         <figure>
-                                            <div class="tag tag-green">免息</div>
+                                            <div class="tag tag-red">优惠</div>
                                         </figure>
-                                        <label>坚果Pro 3 花呗 12 期免息<span class="free"><strong>每月低至￥216.58元</strong></span></label>
-                                    </article>
-                                    <article>
-                                        <figure>
-                                            <div class="tag tag-red">领券</div>
-                                        </figure>
-                                        <label>100元 坚果Pro 3 优惠券<span class="blank"><strong>现在领取</strong></span></label>
+                                        <label>${act[1].title}.<span class="blank"><strong>现在领取</strong></span></label>
                                     </article>
                                 </div>
                             </div>
@@ -87,7 +83,7 @@ define(['jquery'], function($) {
                         </div>
                         <div class="product-memory-sel">
                             <div class="count-wrapper clearfix">
-                                <div class="item-do-count>
+                                <div class="item-do-count">
                                     <span class="do-count-title">数量选择</span>
                                     <aside class="do-count">
                                         <div class="select">
@@ -109,7 +105,57 @@ define(['jquery'], function($) {
                     </div> `;
 
                     $('.product-main').append(temp);
+
+                    let temp1 = `
+                    <div class="fix-bar">
+                        <div class="fix-bar-wrapper">
+                            <div class="bar-left">
+                                <h1 class="bar-text">您已选择了</h1>
+                                <div class="bar-device-info">
+                                    <h1 class="clearfix">
+                                        <span class="title">坚果 Pro 3</span>
+                                        <span class="price">
+                                            <i>￥</i>
+                                            <span>${res.pro_price}</span>
+                                        </span>
+                                        <span class="ori-price">
+                                            <i>￥</i>
+                                            <span>${res.pro_reprice}</span>
+                                        </span>
+                                    </h1>
+
+                                </div>
+                            </div>
+                            <div class="bar-right">
+                                <div class="has-discount-price">
+                                    <div class="bar-price">
+                                        <i>￥</i>
+                                        <span>${res.pro_price}</span>
+                                    </div>
+                                    <div class="bar-ori-price">
+                                        <i>￥</i>
+                                        <span>${res.pro_reprice}</span>
+                                    </div>
+                                </div>
+                                <div class="bar-btn white-btn">
+                                    <a>现在购买</a>
+                                </div>
+                                <div class="bar-btn">
+                                    <a>加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>`;
+
+                    $('.product-recommend-wrapper').append(temp1);
                 }
+            });
+        },
+        count:function(){
+            $('.product-recommend-wrapper').on('click','.up',function () {
+                alert(1);
+            // let num = $('num').val();
+            // num++;
             });
         }
     }

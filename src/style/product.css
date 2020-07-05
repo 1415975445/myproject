@@ -117,7 +117,7 @@ nav .container .nav_aside ul li:first-child {
 .product-content .product-con .product-main .product-info .product-title .item-price {
   position: absolute;
   right: 40px;
-  bottom: 40px;
+  bottom: 20px;
 }
 .product-content .product-con .product-main .product-info .product-title .item-price .now-price {
   display: block;
@@ -331,9 +331,6 @@ nav .container .nav_aside ul li:first-child {
   left: 46px;
   cursor: pointer;
 }
-.product-content .product-con .product-main .product-info .product-memory-sel {
-  margin-top: 30px;
-}
 .product-content .product-con .product-main .product-info .product-memory-sel .count-wrapper {
   margin: 0;
   padding: 30px 0;
@@ -382,7 +379,6 @@ nav .container .nav_aside ul li:first-child {
   cursor: not-allowed;
 }
 .product-content .product-con .product-main .product-info .product-memory-sel .count-wrapper .item-do-count .do-count .select .down:before {
-  background-position: 0 -300px;
   content: "";
   position: absolute;
   left: -4px;
@@ -391,6 +387,7 @@ nav .container .nav_aside ul li:first-child {
   height: 45px;
   background-size: 100% auto;
   background: url('../img/updown-select-icon.ce7e0ffb6ed63599a7537ee7ca06827c\ \(1\).png') no-repeat;
+  background-position: 0 -300px;
 }
 .product-content .product-con .product-main .product-info .product-memory-sel .count-wrapper .item-do-count .do-count .select .num {
   position: relative;
@@ -422,7 +419,6 @@ nav .container .nav_aside ul li:first-child {
   text-align: center;
 }
 .product-content .product-con .product-main .product-info .product-memory-sel .count-wrapper .item-do-count .do-count .select .up:before {
-  background-position: 0 0;
   content: "";
   position: absolute;
   left: -4px;
@@ -431,6 +427,7 @@ nav .container .nav_aside ul li:first-child {
   height: 45px;
   background: url('../img/updown-select-icon.ce7e0ffb6ed63599a7537ee7ca06827c\ \(1\).png') no-repeat;
   background-size: 100% auto;
+  background-position: 0 0;
 }
 .product-content .product-con .product-main .product-info .product-memory-sel .server {
   margin: 0;
@@ -778,7 +775,7 @@ nav .container .nav_aside ul li:first-child {
   background: #fafafa;
   border-top: 1px solid #e3e3e3;
   box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.04);
-  z-index: 25;
+  z-index: 999;
 }
 .product-recommend-wrapper .fix-bar .fix-bar-wrapper {
   display: flex;

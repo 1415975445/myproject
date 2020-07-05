@@ -8,4 +8,5 @@ require.config({
 
 require(['product'],function (product) {
     product.render();
+    product.count();
 })
