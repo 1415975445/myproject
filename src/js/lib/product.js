@@ -1,7 +1,7 @@
 let baseUrl = "http://localhost/h5-203/myproject/smartisan.com";
-define(['jquery'], function($) {
+define(['jquery','cookie'], function($,cookie) {
     return{
-        render:function(){
+        render:function(callback){
             let id = location.search.split("=")[1];
             $.ajax({
                 type: "get",
@@ -123,7 +123,11 @@ define(['jquery'], function($) {
                                             <span>${res.pro_reprice}</span>
                                         </span>
                                     </h1>
-
+                                    <h2>
+                                        <span>
+                                            X1
+                                        </span>
+                                    </h2>
                                 </div>
                             </div>
                             <div class="bar-right">
@@ -148,15 +152,60 @@ define(['jquery'], function($) {
                     </div>`;
 
                     $('.product-recommend-wrapper').append(temp1);
+
+                    callback && callback(res.pro_id,res.pro_price);
                 }
             });
         },
         count:function(){
-            $('.product-recommend-wrapper').on('click','.up',function () {
-                alert(1);
-            // let num = $('num').val();
-            // num++;
+            $('.product-main').on('click','.up',function () {
+                let num = $('.num').text();
+                num++;
+                if(num > 1 && num < 10){
+                    $('.down').css('cursor','pointer');
+                    $('up').css('cuesor','pointer');
+                }
+                $('.num').html(num);
             });
+            $('.product-main').on('click','.down',function () {
+                let num = $('.num').text();
+                num--;
+                if(num < 1){
+                    $('.down').css('cursor','not-allowed');
+                    num = 1;
+                }
+                $('.num').html(num);
+            });
+        },
+        addItem:function (id,price,num) {
+            //shop
+            let shop = cookie.get('shop');//获取cookie中的购物车
+            //获取是为了判断它是否存在
+            //不存在就创建
+            //存在就修改
+            let product = {
+                id:id,
+                price:price,
+                num:num
+            }
+
+            if(shop){//存在
+                shop = JSON.parse(shop);//将字符串转成数组
+                //判断数组中已经存在了商品的id
+                //只修改num值 而不是将商品放入数组
+                if(shop.some(ele=>ele.id == id)){
+                    shop.forEach(element => {
+                        element.id == id ? element.num = num : null;
+                    });
+                }else{
+                    shop.push(product);
+                }
+            }else{
+                shop = [];//不存在就新建数组
+                shop.push(product);//放入商品
+            }
+
+            cookie.set('shop',JSON.stringify(shop),1);
         }
     }
 });
