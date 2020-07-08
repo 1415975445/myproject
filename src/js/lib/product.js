@@ -145,7 +145,7 @@ define(['jquery','cookie'], function($,cookie) {
                                     <a>现在购买</a>
                                 </div>
                                 <div class="bar-btn">
-                                    <a>加入购物车</a>
+                                    <a href = "./car.html">加入购物车</a>
                                 </div>
                             </div>
                         </div>
@@ -160,6 +160,7 @@ define(['jquery','cookie'], function($,cookie) {
         count:function(){
             $('.product-main').on('click','.up',function () {
                 let num = $('.num').text();
+                num = Number(num);
                 num++;
                 if(num > 1 && num < 10){
                     $('.down').css('cursor','pointer');
@@ -169,6 +170,7 @@ define(['jquery','cookie'], function($,cookie) {
             });
             $('.product-main').on('click','.down',function () {
                 let num = $('.num').text();
+                num = Number(num);
                 num--;
                 if(num < 1){
                     $('.down').css('cursor','not-allowed');

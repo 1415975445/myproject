@@ -271,6 +271,7 @@ header .car-a {
   position: relative;
 }
 .page-cat .gray-box .box-inner .box-inner-in .cart-table .item-list .cart-group .cart-items .cart-item .item-wrapper .item-cols-num .quantity .button {
+  cursor: pointer;
   overflow: hidden;
   float: left;
   display: inline-block;
@@ -290,12 +291,13 @@ header .car-a {
   cursor: not-allowed;
 }
 .page-cat .gray-box .box-inner .box-inner-in .cart-table .item-list .cart-group .cart-items .cart-item .item-wrapper .item-cols-num .quantity .up {
+  cursor: pointer;
   float: right;
   margin: 0;
   background-position: -1px 1px;
   overflow: hidden;
 }
-.page-cat .gray-box .box-inner .box-inner-in .cart-table .item-list .cart-group .cart-items .cart-item .item-wrapper .item-cols-num .quantity .num {
+.page-cat .gray-box .box-inner .box-inner-in .cart-table .item-list .cart-group .cart-items .cart-item .item-wrapper .item-cols-num .quantity .number {
   width: 36px;
   height: 18px;
   border: none;
@@ -309,7 +311,7 @@ header .car-a {
   display: inline-block;
   margin: 9px 0 0;
 }
-.page-cat .gray-box .box-inner .box-inner-in .cart-table .item-list .cart-group .cart-items .cart-item .item-wrapper .item-cols-num .quantity .num input {
+.page-cat .gray-box .box-inner .box-inner-in .cart-table .item-list .cart-group .cart-items .cart-item .item-wrapper .item-cols-num .quantity .number input {
   padding: 0;
   background-color: transparent;
   font-weight: 700;
