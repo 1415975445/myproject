@@ -11,6 +11,8 @@ body {
   display: block;
 }
 body .wrapper {
+  display: flex;
+  position: relative;
   background-size: 100px;
   background-repeat: repeat;
   min-height: 800px;
@@ -144,6 +146,7 @@ body .wrapper .dialog .content form ul .username .input input {
 }
 body .wrapper .dialog .content form ul .password {
   clear: both;
+  margin-bottom: 15px;
   position: relative;
 }
 body .wrapper .dialog .content form ul .password .input {
@@ -438,7 +441,7 @@ body .wrapper .copyright {
   color: #434d55;
   font-size: 12px;
   padding: 0 0 60px;
-  position: absolute;
+  position: relative;
   bottom: 0px;
   text-align: center;
 }

@@ -16,7 +16,6 @@ require(['jquery','car'],function ($,car) {
         $.each(stotal, function (i, val) { 
              sum += Number(val.innerText);
         });
-        // console.log(sum);
         $('.tprice').html(sum);
         
     });

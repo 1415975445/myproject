@@ -3,7 +3,6 @@ define(['jquery', 'cookie'], function ($, cookie) {
     return {
       check: function () {
         $('.login-btn').on('click', function () {
-          alert(1);
           $.ajax({
             type: "post",
             url: `${baseUrl}/interface/login.php`,
@@ -13,16 +12,17 @@ define(['jquery', 'cookie'], function ($, cookie) {
             },
             dataType: "json",
             success: function (res) {
+              console.log(res);
               if (res.length) {
-                alert('用户名或密码错误，请重新输入')
-                location.reload()
+                alert('用户名或密码错误，请重新输入');
+                location.reload();
               } else {
                 let loginInfo = {
                   loginStatus: true,
                   userphone: res.user_phone
                 }
                 cookie.set('loginInfo', JSON.stringify(loginInfo), 1)
-                location.href = `./index.html`
+                location.href = `./index.html`;
               }
             }
           });

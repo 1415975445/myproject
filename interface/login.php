@@ -4,7 +4,7 @@
   $userphone = $_REQUEST['userphone'];
   $password = $_REQUEST['password'];
 
-  $sql = "select * from user where user_phone = '$userphone' and user_pass = '$password'";
+  $sql = "select * from user where user_phone = '$userphone' and user_password = '$password'";
 
   $res = $mysqli->query($sql);
 
