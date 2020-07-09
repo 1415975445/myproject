@@ -269,7 +269,7 @@ define(['jquery', 'cookie', 'index'], function ($, cookie, index) {
 
           shop.forEach((elm, index) => {
             if (elm.id == $(this).parents().filter('.item-content').attr('data-index')) {
-              temp.i = index
+              temp.i = index;
             }
           })
 

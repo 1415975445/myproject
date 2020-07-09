@@ -24,7 +24,7 @@ define(['jquery','cookie'],function ($,cookie) {
                             let arr = shop.filter(val => val.id == element.pro_id);
                             console.log(arr);
                             tempstr += `
-                            <div class="cart-table">
+                            <div class="cart-table" data-index="${element.pro_id}">
                                 <div class="item-list">
                                     <div class="cart-group">
                                         <div class="cart-items">
@@ -53,26 +53,19 @@ define(['jquery','cookie'],function ($,cookie) {
                                                             <i>￥</i>
                                                             <span class ="stotal">${element.pro_price * arr[0].num}</span>
                                                         </div>
-                                                        <div class="diff">
-                                                            已优惠
-                                                            <span>
-                                                                <i>￥</i>
-                                                                <span>${element.pro_reprice - element.pro_price}</span>
-                                                            </span>
-                                                        </div>
                                                     </div>
                                                     <div class="item-cols-num">
                                                         <div class="quantity">
-                                                            <span class="button down" disabled>-</span>
+                                                            <span class="button down" disabled></span>
                                                             <span class="number">
                                                                 ${arr[0].num}
                                                             </span>
-                                                            <span class="button up">+</span>
+                                                            <span class="button up"></span>
                                                         </div>
                                                     </div>
                                                     <div class="price">
                                                         <i>￥</i>
-                                                        <span>${element.pro_price}</span>
+                                                        <span class="dan-price">${element.pro_price}</span>
                                                     </div>
                                                 </div>
                                             </div>
@@ -118,8 +111,8 @@ define(['jquery','cookie'],function ($,cookie) {
                                                 </em> -->
                                             </h4>
                                             <h5>
-                                                总额节省
-                                                <span>￥</span>
+                                                活动优惠
+                                                <span></span>
                                                 <i>
                                                     <span></span>
                                                 </i>
@@ -162,6 +155,20 @@ define(['jquery','cookie'],function ($,cookie) {
                 }
                 $('.number').html(num);
             });
+        },
+        delete:function () {
+            $('.box-inner-in').on('click','.item-delete',function () {
+                let shop = JSON.parse(cookie.get('shop'));
+                let temp = {};
+                shop.forEach((elm, index) => {
+                    if (elm.id == $(this).parents().filter('.cart-table').attr('data-index')) {
+                      temp.i = index;
+                    }
+                  })
+                  shop.splice(temp.i, 1);
+                  cookie.set('shop', JSON.stringify(shop), 1);
+                  location.reload();
+            })
         }
     }
 })

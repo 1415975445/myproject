@@ -22,12 +22,12 @@ define(['jquery','cookie'], function($,cookie) {
                             <div class="item-price">
                                 <span class="now-price">
                                     <em>￥</em>
-                                    <i>${res.pro_price}</i>
+                                    <i class="n-price">${res.pro_price}</i>
                                 </span>
                                 <span class="ori-price">
                                 原价：
                                     <i>￥</i>
-                                    <span>${res.pro_reprice}</span>
+                                    <span class="o-price">${res.pro_reprice}</span>
                                 </span>
                             </div>
                         </div>
@@ -114,18 +114,11 @@ define(['jquery','cookie'], function($,cookie) {
                                 <div class="bar-device-info">
                                     <h1 class="clearfix">
                                         <span class="title">坚果 Pro 3</span>
-                                        <span class="price">
-                                            <i>￥</i>
-                                            <span>${res.pro_price}</span>
-                                        </span>
-                                        <span class="ori-price">
-                                            <i>￥</i>
-                                            <span>${res.pro_reprice}</span>
-                                        </span>
                                     </h1>
                                     <h2>
-                                        <span>
-                                            X1
+                                        <span class>
+                                            <span>X</span>
+                                            <span class="number">1</span>
                                         </span>
                                     </h2>
                                 </div>
@@ -134,11 +127,11 @@ define(['jquery','cookie'], function($,cookie) {
                                 <div class="has-discount-price">
                                     <div class="bar-price">
                                         <i>￥</i>
-                                        <span>${res.pro_price}</span>
+                                        <span class="t-price">${res.pro_price}</span>
                                     </div>
                                     <div class="bar-ori-price">
                                         <i>￥</i>
-                                        <span>${res.pro_reprice}</span>
+                                        <span class="ot-price">${res.pro_reprice}</span>
                                     </div>
                                 </div>
                                 <div class="bar-btn white-btn">

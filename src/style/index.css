@@ -15,6 +15,7 @@ nav ul {
   float: left;
 }
 nav ul li {
+  position: relative;
   display: list-item;
 }
 nav ul li a {
@@ -24,10 +25,6 @@ nav ul li a {
   line-height: 74px;
   transition: color 0.1s ease;
   color: rgba(0, 0, 0, 0.7);
-}
-nav ul li .active {
-  font-weight: 700;
-  color: #333;
 }
 nav .search {
   height: 34px;

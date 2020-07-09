@@ -9,5 +9,5 @@ require.config({
 
 require(['index','slider'], function(index,slider) {
     index.render();
-    index.slider();
+    // index.slider();
 });
