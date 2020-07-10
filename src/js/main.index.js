@@ -7,7 +7,7 @@ require.config({
     shim:{}
 });
 
-require(['index','slider'], function(index,slider) {
+require(['index','jquery'], function(index,$) {
     index.render();
-    // index.slider();
+    index.search();
 });

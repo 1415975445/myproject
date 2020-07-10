@@ -7,14 +7,15 @@ nav{
     transition: height .1s ease;
     background: white;
     line-height: 75px;
+    position: relative;
     & ul{
         display: flex;
         justify-content: flex-start;
         align-items: center;
         float: left;
         li {
-            position: relative;
             display: list-item;
+            transition: all 1s;
             a{
                 user-select: none;
                 margin-right: 30px;
@@ -23,6 +24,47 @@ nav{
                 transition: color .1s ease;
                 color: rgba(0,0,0,.7);
             }
+            .subMenu{
+                transition:all 0.5s;
+                display: none;
+                width: 100%;
+                height: 0px;
+                position: absolute;
+                top: 75px;
+                left: 0px;
+                z-index: 20;
+                background-color:white;
+                ul{
+                    left: 150px;
+                    position: absolute;
+                    width: 1220px;
+                    height: 226px;
+                    list-style: none;
+                    display: flex;
+                    justify-content:center;
+                    box-sizing: border-box;
+                    li{
+                        text-align: center;
+                        height: 226px;
+                        width: 12.5%;
+                        background: white;
+                        text-align: center;
+                        // border: 1px solid yellow;
+                        a{
+                            height: 266px;
+                            width: 12.5%;
+                            text-align: center;
+                            margin: 0px auto;
+                            // display: block;
+                        }
+                    }
+                }
+            }
+        }
+        li:hover .subMenu{
+            display: block;
+            transition: all 1s;
+            height: 226px;
         }
     }
     & .search{

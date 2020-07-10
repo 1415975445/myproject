@@ -7,6 +7,7 @@ nav {
   transition: height 0.1s ease;
   background: white;
   line-height: 75px;
+  position: relative;
 }
 nav ul {
   display: flex;
@@ -15,8 +16,8 @@ nav ul {
   float: left;
 }
 nav ul li {
-  position: relative;
   display: list-item;
+  transition: all 1s;
 }
 nav ul li a {
   user-select: none;
@@ -25,6 +26,44 @@ nav ul li a {
   line-height: 74px;
   transition: color 0.1s ease;
   color: rgba(0, 0, 0, 0.7);
+}
+nav ul li .subMenu {
+  transition: all 0.5s;
+  display: none;
+  width: 100%;
+  height: 0px;
+  position: absolute;
+  top: 75px;
+  left: 0px;
+  z-index: 20;
+  background-color: white;
+}
+nav ul li .subMenu ul {
+  left: 150px;
+  position: absolute;
+  width: 1220px;
+  height: 226px;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+}
+nav ul li .subMenu ul li {
+  height: 226px;
+  width: 12.5%;
+  background: white;
+  text-align: center;
+}
+nav ul li .subMenu ul li a {
+  height: 266px;
+  width: 12.5%;
+  text-align: center;
+  margin: 0px auto;
+}
+nav ul li:hover .subMenu {
+  display: block;
+  transition: all 1s;
+  height: 226px;
 }
 nav .search {
   height: 34px;
